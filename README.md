@@ -1,4 +1,16 @@
-# Dibimbing - Kampus Merdeka 1 - Final Project Template
+# Dibimbing - Kampus Merdeka 1 - Final Project - Kelompok 7
+- Fathur Rahman Syahputra
+- Animni Fiddaroini
+- alya Nabila
+- Gloria W. Z.
+- Imas Siti M.
+
+Tools that you need to prepare
+- WSL 2/ubuntu (Highly recommended): you can't run this on Windows, so you'll need a linux subsytem on windows like WSL 2
+- Docker (Must install)
+- Airflow (Must install)
+- DBeaver (optional): you can use other SQL query tools
+- PostgreSQL (Must install)
 
 ## How to
 - In order to spin up the containers, first you have to build all the Docker images needed using 
@@ -10,8 +22,14 @@
     make spinup
     ```
 - Once all the containers ready, you can try to
-    - Access the Airflow on port `8081`
-    - Access the Metabase on port `3001`, for the username and password, you can try to access the [.env](/.env) file
+    - Access the Airflow on port `8081`, and access `http://localhost:8081/connection/add` to set postgres connection
+    - Connection Id: postgres_dw
+    - Host: host.docker.internal
+    - Schema: data_warehouse
+    - login: user
+    - password: password
+    - port 5433
+    - Now you can try to run dag task on Airflow
     - Since we have 2 Postgres containers, you can use `dataeng-warehouse-postgres` container as your data warehouse and ignore the `dataeng-ops-postgres` container since it is only being used for the opetrational purposes.
 ---
 ## Folder Structure
@@ -39,24 +57,3 @@ Here is the place where you can modify or add a new docker stack if you decide t
 This folder contains script needed in order to automate an initializations process on docker-container setup.
 
 ---
-## Grading Criteria
-
-**Code Quality (20%)**
-- Code Readability (5%)
-- Code Efficiency (5%)
-- Documentation (10%)
-
-**Project Delivery (30%)**
-- Standard Template (6%)
-- Data Platform Improvisation (12%)
-- Data Modelling Improvisation (12%)
-
-**Implementation (40%)**
-- Data Extraction (Standard / Improved) (15%)
-- Data Pipeline (Standard / Best-Practice) (15%)
-- Data Analysis (10%)
-
-**Presentation (10%)**
-- Slide Content (4%)
-- Slide Design (3%)
-- Communication (3%)
