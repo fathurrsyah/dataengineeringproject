@@ -1,0 +1,8 @@
+pandas
+fastavro
+pyarrow
+xlrd
+cramjam
+avro
+python-snappy
+copy
