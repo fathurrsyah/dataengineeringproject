@@ -21,7 +21,7 @@ Tools that you need to prepare
     ```sh
     make spinup
     ```
-- Once all the containers ready, you can try to
+- Once all the containers ready, you need to
     - Access the Airflow on port `8081`, and access `http://localhost:8081/connection/add` to set postgres connection
     - Connection Id: postgres_dw
     - Host: host.docker.internal
